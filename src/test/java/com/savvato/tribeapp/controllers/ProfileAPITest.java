@@ -82,6 +82,7 @@ public class ProfileAPITest {
         Mockito.when(userPrincipalService.getUserPrincipalByEmail(Mockito.anyString())).thenReturn(
                 new UserPrincipal(user)
         );
+        
 
         Mockito.when(profileService.getByUserId(Mockito.anyLong())).thenReturn(
                 Optional.of(ProfileDTO.builder()
@@ -147,7 +148,6 @@ public class ProfileAPITest {
 
 @Test
 public void testProfileUnHappyPathUpdate() throws Exception {
-    
     Set<UserRole> rolesSet = new HashSet<>();
     rolesSet.add(UserRole.ROLE_ACCOUNTHOLDER);
     rolesSet.add(UserRole.ROLE_ADMIN);
